@@ -103,6 +103,28 @@ export default function Home() {
     fetchData();
   }, []);
 
+  const [itemsToShow, setItemsToShow] = useState(4);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        // 640px is the default breakpoint for 'sm' in Tailwind CSS
+        setItemsToShow(3);
+      } else {
+        setItemsToShow(4);
+      }
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Clean up
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="px-5">
       <div className="relative w-full h-auto mt-20  ">
@@ -116,7 +138,7 @@ export default function Home() {
             />
             {/* Overlay Divs */}
             <div className="absolute bottom-0 left-0 p-2.5 md:p-4 flex space-x-4 bg-[#171e28] bg-opacity-50 md:ml-12 ml-2 md:mb-5 mb-2 lg:ml-24 rounded-xl">
-              {apiData.map((data, index) => (
+              {apiData.slice(0, itemsToShow).map((data, index) => (
                 <ShowValueWithArrow
                   key={index}
                   value={data.value}

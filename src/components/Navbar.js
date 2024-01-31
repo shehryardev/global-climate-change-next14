@@ -19,7 +19,7 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 w-full z-50 bg-black p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="">
-          <div className="text-white font-bold text-lg">
+          <div className="text-white font-bold text-lg text-center">
             Global Climate Change
           </div>
           <p className="text-xs text-center text-[#a8b6c1] tracking-wide">
@@ -48,7 +48,7 @@ const Navbar = () => {
               target="_blank"
               className="text-gray-300 hover:text-white cursor-pointer"
             >
-              Explore at NASA
+              Explore
             </a>
           </li>
           {/* Repeat for other sections */}
