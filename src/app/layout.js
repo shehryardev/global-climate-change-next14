@@ -5,8 +5,8 @@ import Navbar from "@/components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Climate Change - Dania Ahmed",
-  description: "A site made by Dania on Global Climate Change",
+  title: "Climate Change",
+  description: "A site on Global Climate Change",
 };
 
 export default function RootLayout({ children }) {
